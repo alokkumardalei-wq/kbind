@@ -102,6 +102,7 @@ func (b *Binder) BindFromFile(ctx context.Context) ([]*kubebindv1alpha2.APIServi
 
 	return b.processRequests(ctx, []*kubebindv1alpha2.APIServiceExportRequest{request}, remoteConfig, remoteNamespaceActual, remoteKubeconfigResolved)
 }
+
 // BindFromResponse processes a BindingResourceResponse and creates all necessary bindings
 func (b *Binder) BindFromResponse(ctx context.Context, response *kubebindv1alpha2.BindingResourceResponse) ([]*kubebindv1alpha2.APIServiceBinding, error) {
 	if response == nil || response.Authentication.OAuth2CodeGrant == nil {
